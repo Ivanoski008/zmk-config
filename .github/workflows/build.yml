@@ -1,8 +1,8 @@
 name: Build ZMK firmware
-on: 
-   workflow_call:
+
+on:
+  [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: Ivanoski008/zmk-config/build.yml@main
-
+    uses: Ivanoski008/zmk-config/.github/workflows/build.yml@main
