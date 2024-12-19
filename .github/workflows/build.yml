@@ -3,4 +3,4 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/Ivanoski008.yml@main
+    uses: zmkfirmware/zmk/.github/workflows/build.yml
