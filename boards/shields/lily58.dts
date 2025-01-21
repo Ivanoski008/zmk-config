@@ -1,17 +1,16 @@
-/ {
-    i2c1: i2c@40003000 {
-        compatible = "nordic,nrf-twim";
-        reg = <0x40003000>;
-        status = "okay";
-        sda-pin = <20>;
-        scl-pin = <17>;
+&i2c1 {
+    status = "okay";
 
-        oled_display: oled_display@3c {
-            compatible = "ssd1306";
-            reg = <0x3c>;
-            width = <128>;
-            height = <32>;
-            reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
-        };
+    sda-pin = <17>; /* P0.17 como SDA */
+    scl-pin = <20>; /* P0.20 como SCL */
+
+    oled_display: oled_display@3c {
+        compatible = "ssd1306";
+        reg = <0x3c>; /* Dirección I2C de la pantalla */
+        width = <128>;
+        height = <32>;
+        reset-gpios = <&gpio0 18 GPIO_ACTIVE_LOW>;
+
     };
 };
+
