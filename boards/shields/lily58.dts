@@ -3,8 +3,8 @@
         compatible = "nordic,nrf-twim";
         reg = <0x40003000>;
         status = "okay";
-        sda-pin = <17>;
-        scl-pin = <20>;
+        sda-pin = <20>;
+        scl-pin = <17>;
 
         oled_display: oled_display@3c {
             compatible = "ssd1306";
