@@ -1,0 +1,17 @@
+/ {
+    i2c1: i2c@40003000 {
+        compatible = "nordic,nrf-twim";
+        reg = <0x40003000>;
+        status = "okay";
+        sda-pin = <26>;
+        scl-pin = <27>;
+
+        oled_display: oled_display@3c {
+            compatible = "ssd1306";
+            reg = <0x3c>;
+            width = <128>;
+            height = <32>;
+            reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
+        };
+    };
+};
