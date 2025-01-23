@@ -89,7 +89,7 @@
                                                                   &trans                &trans          &trans                &trans    &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LG(LC(LA(LS(AT_SIGN)))) LS(LA(LC(LG(RIGHT_BRACE))))>;
+            sensor-bindings = <&inc_dec_kp LG(LC(LA(LS(LEFT_BRACE)))) LS(LA(LC(LG(RIGHT_BRACE))))>;
         };
     };
 };
