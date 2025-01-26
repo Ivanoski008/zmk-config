@@ -1,11 +1,6 @@
-&gpio0 {
-    zmk_rgb_underglow: rgb_leds {
-        compatible = "gpio-leds";
-        gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;  // Asegúrate de que el pin 10 es el correcto
-        label = "RGB Underflow";
-        default-state = "off";
-led_pin: led {
-        gpios = <&gpio0 10 GPIO_OUTPUT>;  // Este es un ejemplo de un pin GPIO, usa el que corresponda.
+&gpio {
+    led_pin: pin {
+        label = "LED_PIN";
+        gpios = <&gpio0 10 GPIO_OUTPUT>;  // Asegúrate de que el pin y el banco sean correctos
     };
-  };
 };
