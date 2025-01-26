@@ -1,0 +1,7 @@
+/ {
+    zmk,backlight {
+        compatible = "zmk,backlight";
+        label = "BACKLIGHT";
+        gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
+    };
+};
