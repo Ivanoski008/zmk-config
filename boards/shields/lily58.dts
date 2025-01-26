@@ -1,16 +1,24 @@
-&i2c1 {
-    status = "okay";
+/ {
+    zmk,backlight {
+        compatible = "zmk,backlight";
+        pin = <0x0 0x7>;    // GPIO P0.07 (D6) para retroiluminación
+        levels = <5>;       // Cambia el número de niveles según tu preferencia
+    };
 
-    sda-pin = <17>; /* P0.17 como SDA */
-    scl-pin = <20>; /* P0.20 como SCL */
+    zmk,display {
+        compatible = "zmk,display";
+        i2c = <&i2c1>;      // Usa el bus I2C 1
+        width = <128>;      // Ancho de la pantalla OLED
+        height = <64>;      // Alto de la pantalla OLED
+        sda-pin = <0x0 0xA>; // GPIO P0.10 (D2) para SDA
+        scl-pin = <0x0 0xB>; // GPIO P0.11 (D3) para SCL
+    };
 
-    oled_display: oled_display@3c {
-        compatible = "ssd1306";
-        reg = <0x3c>; /* Dirección I2C de la pantalla */
-        width = <128>;
-        height = <32>;
-        reset-gpios = <&gpio0 18 GPIO_ACTIVE_LOW>;
-
+    zmk,battery {
+        compatible = "zmk,battery";
+        io-channels = <&adc 0>;   // Canal ADC en GPIO P0.04 (A0)
+        full-cell-microvolt = <4200000>;  // Voltaje de batería llena (4.2V)
+        empty-cell-microvolt = <3300000>; // Voltaje de batería vacía (3.3V)
     };
 };
 
