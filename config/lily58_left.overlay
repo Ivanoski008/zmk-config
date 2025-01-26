@@ -1,14 +1,8 @@
-&pwm0 {
-    status = "okay";
-};
-
 &gpio0 {
-    status = "okay";
-};
-
-&zmk_rgb_underglow {
-    compatible = "zmk,rgb-underglow";
-    pin = <6>;                     // GPIO conectado al DIN del LED
-    chain-length = <12>;           // Cambia según el número de LEDs
-    label = "RGB_LED";
+    zmk_rgb_underglow: rgb_leds {
+        compatible = "gpio-leds";
+        gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;  // Asegúrate de que el pin 10 es el correcto
+        label = "RGB Underflow";
+        default-state = "off";
+    };
 };
