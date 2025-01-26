@@ -1,6 +1,6 @@
-&gpio {
+&gpio0 {
     led_pin: pin {
         label = "LED_PIN";
-        gpios = <&gpio0 10 GPIO_OUTPUT>;  // Asegúrate de que el pin y el banco sean correctos
+        gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;
     };
 };
