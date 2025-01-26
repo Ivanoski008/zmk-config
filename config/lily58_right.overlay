@@ -6,3 +6,8 @@
         default-state = "off";
     };
 };
+&gpio {
+    led_pin: led {
+        gpios = <&gpio0 10 GPIO_OUTPUT>;  // Este es un ejemplo de un pin GPIO, usa el que corresponda.
+    };
+};
