@@ -1,7 +1,7 @@
 &backlight {
     compatible = "zmk,backlight";
     pin = <13>; /* Cambia este valor según el pin que usas para el backlight */
-  levels = <3>; // Niveles de brillo, ajusta según tu necesidad
+    levels = <3>; /* Niveles de brillo, ajusta según tu necesidad */
 };
 
 / {
@@ -9,4 +9,3 @@
         zmk,backlight = &backlight;
     };
 };
-/ {
