@@ -1,0 +1,6 @@
+&pwm0 {
+    compatible = "nordic,nrf-pwm";
+    status = "okay";
+    pin = <6>; /* P0.06 corresponde al número 6 */
+    zmk,backlight;
+};
