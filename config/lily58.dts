@@ -1,11 +1,11 @@
 &backlight {
-    compatible = "zmk,backlight";
-    pin = <13>; /* Cambia este valor según el pin que usas para el backlight */
-    levels = <3>; /* Niveles de brillo, ajusta según tu necesidad */
+    label = "Backlight Controller";
+    status = "okay";
+    pwms = <&pwm0 1 10000 PWM_POLARITY_NORMAL>;
+    zmk,pwm-led-count = <10>; /* Cambia esto por la cantidad de LEDs */
+    zmk,pwm-led-pin = <23>;   /* Cambia este valor según el pin GPIO que controle los LEDs */
 };
 
-/ {
-    chosen {
-        zmk,backlight = &backlight;
-    };
+&chosen {
+    zmk,backlight = &backlight;
 };
