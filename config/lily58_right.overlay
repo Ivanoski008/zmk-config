@@ -1,6 +1,14 @@
 &pwm0 {
     compatible = "nordic,nrf-pwm";
     status = "okay";
-    pin = <6>; /* P0.06 corresponde al número 6 */
+    pinctrl-0 = <&pwm0_default>;
+    pinctrl-names = "default";
     zmk,backlight;
 };
+
+pwm0_default: pwm0_default {
+    group1 {
+        psels = <6>; /* P0.06 */
+    };
+};
+
