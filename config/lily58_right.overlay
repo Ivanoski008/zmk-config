@@ -1,7 +1,26 @@
-&gpio0 {
-    led_pin: pin {
-        label = "LED_PIN";
-        gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;
+
+// Configuración del OLED, si aplica
+&oled0 {
+    compatible = "ssd1306";
+    label = "OLED";
+    i2c-bus = <&i2c1>;
+    height = <32>;        // Altura del OLED
+    width = <128>;        // Ancho del OLED
+    segment-offset = <0>;
+    pinctrl-0 = <&oled_reset>;
+    pinctrl-names = "default";
+};
+
+&pinctrl {
+    oled_reset: oled_reset {
+        pinmux = <NRF_P0 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;  // Pin para reset del OLED
     };
 };
 
+// I2C para OLED
+&i2c1 {
+    compatible = "nordic,nrf-twim";
+    sda-pin = <6>;   // Pin SDA del I2C
+    scl-pin = <7>;   // Pin SCL del I2C
+    clock-frequency = <I2C_BITRATE_STANDARD>;
+};
