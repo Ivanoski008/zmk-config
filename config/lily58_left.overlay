@@ -1,8 +1,0 @@
-/ {
-    zmk,underglow {
-        compatible = "zmk,underglow";  // Nodo compatible con ZMK para iluminación LED direccionable
-        label = "Underglow";
-        chain-length = <56>;          // Número de LEDs en la cadena
-        pin = <&gpio0 26 GPIO_ACTIVE_HIGH>; // Pin GPIO conectado al DIN de los LEDs
-    };
-};/
