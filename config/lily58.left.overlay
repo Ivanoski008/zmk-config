@@ -1,0 +1,13 @@
+&pwm0 {
+    compatible = "nordic,nrf-pwm";
+    status = "okay";
+    pinctrl-0 = <&pwm0_default>;
+    pinctrl-names = "default";
+    zmk,backlight;
+};
+
+pwm0_default: pwm0_default {
+    group1 {
+        psels = <6>; /* P0.06 */
+    };
+};
