@@ -11,4 +11,3 @@ pwm0_default: pwm0_default {
         psels = <6>; /* P0.06 */
     };
 };
-
